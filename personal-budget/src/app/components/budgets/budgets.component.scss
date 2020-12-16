@@ -1,0 +1,17 @@
+mat-card {
+  margin-bottom: 1em;
+  font-size: 24px;
+  button {
+    float: right;
+  }
+  .budget-title {
+    font-weight: bold;
+  }
+  .budget-meta {
+    font-size: 16px;
+    font-style: italic;
+  }
+  .budget-value {
+    margin-top: 1em;
+  }
+}

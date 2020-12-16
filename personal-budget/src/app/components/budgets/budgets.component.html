@@ -1,0 +1,17 @@
+<app-add-budget (create)="addBudgets()"></app-add-budget>
+
+<mat-card *ngFor="let budget of budgets$ | async">
+  <button *ngIf="budget.user === userId" mat-icon-button>
+    <mat-icon (click)="delete(budget.id)" color="warn">delete</mat-icon>
+  </button>
+  <div class="budget-title">
+    {{ budget.title }}
+  </div>
+  <div class="budget-title">
+    {{ budget.budget }}
+  </div>
+  <div class="budget-meta">
+    {{ budget.created }}
+  </div>
+
+</mat-card>

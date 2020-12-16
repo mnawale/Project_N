@@ -1,0 +1,36 @@
+<button (click)="isOpen = !isOpen" mat-raised-button color="accent">
+  <mat-icon>add</mat-icon>Add Budget
+</button>
+<form
+  *ngIf="isOpen"
+  [formGroup]="form"
+  #formDirective="ngForm"
+  (ngSubmit)="onSubmit(form.value)"
+  novalidate
+>
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Budget</mat-label>
+    <input matInput formControlName="value" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Month</mat-label>
+    <input matInput formControlName="month" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Tags</mat-label>
+    <input matInput formControlName="tags" />
+  </mat-form-field>
+  <button
+    color="accent"
+    [disabled]="!form.valid"
+    mat-raised-button
+    type="submit"
+  >
+    <span>Add Budget</span>
+  </button>
+</form>

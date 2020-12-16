@@ -1,0 +1,47 @@
+<mat-toolbar color="accent">
+  <span>
+    <a routerLink="/">
+      <span>Home</span>
+    </a>
+    <a
+      *ngIf="isAuthenticated"
+      routerLinkActive="active-link"
+      routerLink="/budgets"
+    >
+      <span>My Budget</span>
+    </a>
+  </span>
+  <span>
+    <a
+      *ngIf="isAuthenticated"
+      routerLinkActive="active-link"
+      routerLink="/budgets"
+    >
+      <span>Settings</span>
+    </a>
+
+
+    <span
+      *ngIf="!isAuthenticated"
+      routerLinkActive="active-link"
+      routerLink="/login"
+    >
+      <span>Login</span>
+    </span>
+    <a
+      *ngIf="isAuthenticated"
+      (click)="logout()"
+      routerLinkActive="active-link"
+      routerLink="/login"
+    >
+      <span>Logout</span>
+    </a>
+    <a
+      *ngIf="!isAuthenticated"
+      routerLinkActive="active-link"
+      routerLink="/signup"
+    >
+      <span>Register</span>
+    </a>
+  </span>
+</mat-toolbar>
