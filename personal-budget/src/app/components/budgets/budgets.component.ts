@@ -23,21 +23,21 @@ export class BudgetsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.budgets$ = this.fetchBudget();
+    this.budgets$ = this.fetchAll();
     this.userId = this.authService.userId;
   }
 
-  fetchBudget(): Observable<UserBudget[]> {
-    return this.budgetService.fetchBudget();
+  fetchAll(): Observable<UserBudget[]> {
+    return this.budgetService.fetchAll();
   }
 
   addBudgets(): void {
-    this.budgets$ = this.fetchBudget();
+    this.budgets$ = this.fetchAll();
   }
 
   delete(budgetId: Pick<UserBudget, 'id'>): void {
     this.budgetService
       .deleteBudget(budgetId)
-      .subscribe(() => (this.budgets$ = this.fetchBudget()));
+      .subscribe(() => (this.budgets$ = this.fetchAll()));
   }
 }

@@ -1,19 +1,23 @@
+<div class="signin-content">
+  <mat-card>
+    <mat-card-content>
 <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
-  <mat-form-field>
+   <h1>Please login to continue</h1>
+  <mat-form-field class="full-width-input">
     <mat-label>Email</mat-label>
-    <input matInput placeholder="Ex. Jon" formControlName="email" />
+    <input matInput placeholder="Email ID" formControlName="email" />
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field class="full-width-input">
     <mat-label>Password</mat-label>
     <input
       matInput
       type="password"
-      placeholder="Ex. Jon"
+      placeholder="Password"
       formControlName="password"
     />
   </mat-form-field>
   <button
-    color="accent"
+    
     [disabled]="!loginForm.valid"
     mat-raised-button
     type="submit"
@@ -21,3 +25,6 @@
     <span>Log in</span>
   </button>
 </form>
+   </mat-card-content>
+  </mat-card>
+</div>

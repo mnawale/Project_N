@@ -1,0 +1,26 @@
+section.hero {
+  height: 350px;
+  background-color: #b4c6f0;
+  background-image: url('/assets/budget.jpg');
+  background-size: 400px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  padding-top: 40px;
+}
+
+section.hero h1,
+section.hero h2 {
+  text-align: center;
+  margin: 0;
+}
+
+section.hero h1 {
+  color: #fff;
+  font-size: 4.2em;
+  margin-bottom: 20px;
+}
+
+/*This is an A11y Change */
+section.hero h2 {
+  color: #0d24a9;
+}

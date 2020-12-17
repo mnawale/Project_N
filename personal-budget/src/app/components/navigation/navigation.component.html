@@ -1,47 +1,57 @@
-<mat-toolbar color="accent">
-  <span>
+<nav>
+  <ul>
+    <li>
     <a routerLink="/">
-      <span>Home</span>
+      Home
     </a>
+    </li>
+    <li>
     <a
       *ngIf="isAuthenticated"
       routerLinkActive="active-link"
       routerLink="/budgets"
     >
-      <span>My Budget</span>
+      My Budget
     </a>
-  </span>
-  <span>
+    </li>
+    <li>
     <a
       *ngIf="isAuthenticated"
       routerLinkActive="active-link"
       routerLink="/budgets"
     >
-      <span>Settings</span>
+      Settings
     </a>
+    </li>
+    <li>
+    <a
 
-
-    <span
       *ngIf="!isAuthenticated"
       routerLinkActive="active-link"
       routerLink="/login"
     >
-      <span>Login</span>
-    </span>
+      Login
+    </a>
+      </li>
+      <li>
     <a
       *ngIf="isAuthenticated"
       (click)="logout()"
       routerLinkActive="active-link"
       routerLink="/login"
     >
-      <span>Logout</span>
+      Logout
     </a>
+    </li>
+    <li>
     <a
       *ngIf="!isAuthenticated"
       routerLinkActive="active-link"
       routerLink="/signup"
     >
-      <span>Register</span>
+      Register
     </a>
-  </span>
-</mat-toolbar>
+    </li>
+  </ul>
+</nav>
+

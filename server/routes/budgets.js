@@ -8,8 +8,8 @@ const auth = require('../middleware/auth');
 
 const router = express.Router();
 
-//router.get('/', auth, budgetsController.fetchAll);
-router.get('/',auth,budgetsController.fetchBudget);
+router.get('/', auth, budgetsController.fetchAll);
+//router.get('/id',auth,budgetsController.fetchBudget);
 
 router.post(
   '/',

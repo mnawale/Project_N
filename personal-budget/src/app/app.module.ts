@@ -22,6 +22,8 @@ import { BudgetsComponent } from "./components/budgets/budgets.component";
 import { CreateBudgetComponent } from "./components/add-budget/add-budget.component";
 
 import { AuthInterceptorService } from "./services/auth-interceptor.service";
+import { FooterComponent } from './components/footer/footer.component';
+import { HeroComponent } from './components/hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { AuthInterceptorService } from "./services/auth-interceptor.service";
     HomeComponent,
     BudgetsComponent,
     CreateBudgetComponent,
+    FooterComponent,
+    HeroComponent,
   ],
   imports: [
     BrowserModule,

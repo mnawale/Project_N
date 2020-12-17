@@ -23,11 +23,11 @@ export class BudgetService {
     private errorHandlerService: ErrorHandlerService
   ) {}
 
-  fetchBudget(): Observable<UserBudget[]> {
+  fetchAll(): Observable<UserBudget[]> {
     return this.http
       .get<UserBudget[]>(this.url, { responseType: 'json' })
       .pipe(
-        catchError(this.errorHandlerService.handleError<UserBudget[]>('fetchBudget', []))
+        catchError(this.errorHandlerService.handleError<UserBudget[]>('fetchAll', []))
       );
   }
 
@@ -38,7 +38,7 @@ export class BudgetService {
     return this.http
       .post<UserBudget>(
         this.url,
-        { userId, title: formData.title, value: formData.value,
+        { user: userId, title: formData.title, value: formData.value,
           month: formData.month, tags: formData.tags },
         this.httpOptions
       )

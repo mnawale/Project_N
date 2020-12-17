@@ -14,11 +14,12 @@ exports.fetchAll = async (req, res, next) => {
   }
 };
 exports.fetchBudget = async (req, res, next) => {
-  const userId = req.body.userId;
+  const userId = req.params.id;
+  console.log(userId)
   try {
     userId: userId;
       
-  const [userBudgets] = await Budget.fetchBudget(budget.userId);
+  const [userBudgets] = await Budget.fetchBudget(userId);
     res.status(200).json(userBudgets);
   } catch (err) {
     if (!err.statusCode) {
